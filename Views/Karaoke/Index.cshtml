@@ -1,0 +1,73 @@
+﻿@model IEnumerable<KaraokeDisplay.Models.KaraokeModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<script type="text/javascript">
+
+    function functiontocallcontrollermethod(string) {
+        $.ajax({
+            type: 'POST',
+            url: '/KaraokeController/GetIndex',
+            data: { letter: $a }
+        });
+
+</script>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Request</a>
+</p>
+<script>
+
+@const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0",]
+
+</script>
+
+@foreach (var item in alphabet)
+    <li>
+        <a href="javascript:functiontocallcontrollermethod(alphabet[item]);">alphabet[item]</a>
+    </li>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Artist: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+        <td>
+            |
+            <a asp-action="GetIndex" asp-route-id="">Details</a> |
+        </td>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Artist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model ) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>|
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

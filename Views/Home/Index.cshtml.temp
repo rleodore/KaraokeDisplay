@@ -1,0 +1,8 @@
+﻿@{
+    ViewData["Title"] = "Karaoke";
+}
+
+<h2>Karaoke</h2>
+
+<p>Hello from our View Template!</p>
+
