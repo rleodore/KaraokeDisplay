@@ -1,48 +1,100 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Karaoke</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+                .topnav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+                .topnav a.active {
+                    background-color: #04AA6D;
+                    color: white;
+                }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Karaoke" asp-action="Index">KaraokeDisplay</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Karaoke" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+
+    <!-- Navbar -->
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a asp-controller="Karaoke" asp-route-x="#" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> # </a>
+        <a asp-controller="Karaoke" asp-route-x="A" asp-action="Index" class="btn-outline-dark" style="scroll-padding-inline-end:10px;color:whitesmoke;align-items:center"> A </a>
+        <a asp-controller="Karaoke" asp-route-x="B" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> B </a>
+        <a asp-controller="Karaoke" asp-route-x="C" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> C </a>
+        <a asp-controller="Karaoke" asp-route-x="D" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> D </a>
+        <a asp-controller="Karaoke" asp-route-x="E" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> E </a>
+        <a asp-controller="Karaoke" asp-route-x="F" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> F </a>
+        <a asp-controller="Karaoke" asp-route-x="G" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> G </a>
+        <a asp-controller="Karaoke" asp-route-x="H" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> H </a>
+        <a asp-controller="Karaoke" asp-route-x="I" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> I </a>
+        <a asp-controller="Karaoke" asp-route-x="J" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> J </a>
+        <a asp-controller="Karaoke" asp-route-x="K" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> K </a>
+        <a asp-controller="Karaoke" asp-route-x="L" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> L </a>
+        <a asp-controller="Karaoke" asp-route-x="M" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> M </a>
+        <a asp-controller="Karaoke" asp-route-x="N" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> N </a>
+        <a asp-controller="Karaoke" asp-route-x="O" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> O </a>
+        <a asp-controller="Karaoke" asp-route-x="P" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> P </a>
+        <a asp-controller="Karaoke" asp-route-x="Q" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> Q </a>
+        <a asp-controller="Karaoke" asp-route-x="R" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> R </a>
+        <a asp-controller="Karaoke" asp-route-x="S" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> S </a>
+        <a asp-controller="Karaoke" asp-route-x="T" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> T </a>
+        <a asp-controller="Karaoke" asp-route-x="U" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> U </a>
+        <a asp-controller="Karaoke" asp-route-x="V" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> V </a>
+        <a asp-controller="Karaoke" asp-route-x="W" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> W </a>
+        <a asp-controller="Karaoke" asp-route-x="X" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> X </a>
+        <a asp-controller="Karaoke" asp-route-x="Y" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> Y </a>
+        <a asp-controller="Karaoke" asp-route-x="Z" asp-action="Index" class="btn-outline-dark" style="padding-inline-start:15px;color:whitesmoke;align-items:center"> Z </a>
+
+        <form asp-action="Index" method="get">
+            <div style="align-content:end ;margin:0 auto; color:whitesmoke">
+                <p>
+                    Find by Artist: <input type="text" name="search" value="@ViewData["CurrentFilter"]" />
+                    <input type="submit" value="Search" class="btn btn-outline-primary" style="grid-column-end:auto" />
+                </p>
             </div>
-        </nav>
-    </header>
+        </form>
+    </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - Karaoke - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    <div class="footer-dark" ;div style="width:400px;margin:0 auto">
+        <footer>
+            @*<div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>*
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="">Home</a></li>
+                </ul>*@
+            <p class="copyright">TNailz Karaoke © 2022</p>
+        </footer>
+    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-</html>
+</html=>

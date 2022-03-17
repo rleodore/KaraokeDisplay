@@ -10,6 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using KaraokeDisplay.Data;
+using Microsoft.AspNetCore.Mvc;
+using KaraokeDisplay.Models;
 
 namespace KaraokeDisplay
 {
@@ -25,6 +27,13 @@ namespace KaraokeDisplay
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //var myMaxModelBindingCollectionSize = Convert.ToInt32(
+            //  Configuration["MyMaxModelBindingCollectionSize"] ?? "2000");
+
+
+            //services.Configure<MvcOptions>(options =>
+              //     options.MaxModelBindingCollectionSize = myMaxModelBindingCollectionSize);
+
             services.AddControllersWithViews();
 
             services.AddDbContext<KaraokeDisplayContext>(options =>
@@ -37,6 +46,15 @@ namespace KaraokeDisplay
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                //initialize data seeds
+                using var serviceScope = app.ApplicationServices
+                                            .GetRequiredService<IServiceScopeFactory>()
+                                            .CreateScope();
+
+                var service = serviceScope.ServiceProvider;
+
+                SeedKaraoke.Initialize(service);
             }
             else
             {
@@ -56,6 +74,10 @@ namespace KaraokeDisplay
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Karaoke}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "link",
+                    pattern: "{controller=Karaoke}/{action=Index}/{sort?}");
+
             });
         }
     }
