@@ -31,6 +31,7 @@ namespace KaraokeDisplay.Controllers
             if (!String.IsNullOrEmpty(search))
             {
                 artists = artists.Where(s => s.Artist.Contains(search));
+                ViewBag.Search = search;
                 return View(await artists.ToListAsync());
             }
             else if(!Char.IsWhiteSpace(x)) 

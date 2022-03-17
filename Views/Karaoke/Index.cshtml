@@ -7,35 +7,42 @@
 
 @if (Model != null)
 {
-    <table class="table">
-        <thead>
-            <tr>
+<table class="table">
+    <thead>
+        <tr>
+            @if (!Char.IsWhiteSpace(ViewBag.FirstLetter))
+            {
                 <th>
                     Artist's Beginning with @ViewBag.FirstLetter
-                    @Html.DisplayNameFor(model => model.Artist)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-              
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Artist)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    </td>
-                </tr>
             }
-        </tbody>
-    </table>
+            @if (!String.IsNullOrEmpty(ViewBag.Search))
+            {
+                <th>
+                    Your Search of: @ViewBag.Search
+                </th>
+            }
+            <th>
+                Display Order
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Artist)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 }
