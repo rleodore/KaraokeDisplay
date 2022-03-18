@@ -38,6 +38,9 @@ namespace KaraokeDisplay
 
             services.AddDbContext<KaraokeDisplayContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("KaraokeDisplayContext")));
+
+            services.AddDbContext<RequestContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("RequestContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
