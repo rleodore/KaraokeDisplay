@@ -78,8 +78,8 @@ namespace KaraokeDisplay
                     name: "default",
                     pattern: "{controller=Karaoke}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(
-                    name: "link",
-                    pattern: "{controller=Karaoke}/{action=Index}/{sort?}");
+                    name: "Request",
+                    pattern: "{controller=Request}/{action=Index}/{id?}");
 
             });
         }

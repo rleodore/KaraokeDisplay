@@ -18,13 +18,32 @@ namespace KaraokeDisplay.Models
                 serviceProvider.GetRequiredService<
                     DbContextOptions<KaraokeDisplayContext>>()))
             {
-                try
+            }
+        }
+        public static void RequestInitialize(IServiceProvider serviceProvider)
+        {
+            using (var context = new RequestContext(
+                serviceProvider.GetRequiredService<
+                    DbContextOptions<RequestContext>>()))
+            {
+                if (context.RequestModel.Any())
                 {
+                    return;   // DB has been seeded
                 }
-                catch (Exception ex)
+                else
                 {
+                    context.AddRange(
+                        new RequestModel
+                        {
+                            RequesterName ="Rich",
+                            SongId=666,
+                            Artist="Aaron Tippin",
+                            Song= "I Got It Honest [NS Karaoke]"
 
+                        }
+                    );
                 }
+                context.SaveChanges();
             }
         }
     }

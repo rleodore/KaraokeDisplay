@@ -13,6 +13,7 @@ namespace KaraokeDisplay.Controllers
     public class RequestController : Controller
     {
         private readonly RequestContext _context;
+        private readonly KaraokeDisplayContext _kdcontext;
 
         public RequestController(RequestContext context)
         {
@@ -44,8 +45,13 @@ namespace KaraokeDisplay.Controllers
         }
 
         // GET: Request/Create
-        public IActionResult Create()
+        public IActionResult Create(int songId, string artist, string song)
         {
+
+            ViewBag.SongId = songId;
+            ViewBag.Artist = artist;
+            ViewBag.Song = song;
+
             return View();
         }
 

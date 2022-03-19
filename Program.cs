@@ -25,6 +25,7 @@ namespace KaraokeDisplay
                 try
                 {
                     SeedKaraoke.Initialize(services);
+                    SeedKaraoke.RequestInitialize(services);
                 }
                 catch (Exception ex)
                 {
