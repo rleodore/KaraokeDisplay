@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Song" class="control-label"></label>
-                <input asp-for="Song" class="form-control" value="@ViewBag.Song", readonly="readonly" />
+                <input asp-for="Song" class="form-control-lg" value="@ViewBag.Song", readonly="readonly" />
                 <span asp-validation-for="Song" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -41,7 +41,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-controller="Karaoke" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
