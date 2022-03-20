@@ -13,7 +13,6 @@ namespace KaraokeDisplay.Controllers
     public class RequestController : Controller
     {
         private readonly RequestContext _context;
-        private readonly KaraokeDisplayContext _kdcontext;
 
         public RequestController(RequestContext context)
         {
