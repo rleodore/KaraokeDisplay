@@ -41,6 +41,7 @@ namespace KaraokeDisplay
 
             services.AddDbContext<RequestContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("RequestContext")));
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,6 +71,7 @@ namespace KaraokeDisplay
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -80,6 +82,7 @@ namespace KaraokeDisplay
                 endpoints.MapControllerRoute(
                     name: "Request",
                     pattern: "{controller=Request}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
 
             });
         }
