@@ -255,7 +255,17 @@ namespace KaraokeDisplay.Controllers
                     }
                 default:
                     {
-                        artist = from s in _context.KaraokeModel.Take(441)
+                        artist = from s in _context.KaraokeModel
+                                 where ((s.Artist.StartsWith("0"))|| 
+                                 (s.Artist.StartsWith("1")) || 
+                                 (s.Artist.StartsWith("2")) || 
+                                 (s.Artist.StartsWith("3")) || 
+                                 (s.Artist.StartsWith("4")) || 
+                                 (s.Artist.StartsWith("5")) || 
+                                 (s.Artist.StartsWith("6")) || 
+                                 (s.Artist.StartsWith("7")) || 
+                                 (s.Artist.StartsWith("8")) || 
+                                 (s.Artist.StartsWith("9")))
                                  select s;
                         break;
                     }
